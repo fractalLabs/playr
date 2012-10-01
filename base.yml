@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  user: root
+  tasks:
+  - name: install various packages
+    action: apt pkg=$item state=installed
+    with_items:
+    - git
+    - curl
+    - mysql
+    - leiningen
